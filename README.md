@@ -210,3 +210,14 @@ Running migrations:
 C:\Users\Administrator\Desktop\Django_Project_test\NewProject>
 ```
 
+## 	测试数据操作
+
+执行
+
+```
+python manage,py shell
+from myapp.models imporet  Grade,Students
+from django.utils import timezone
+from datetime import *
+```
+
