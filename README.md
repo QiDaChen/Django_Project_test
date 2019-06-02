@@ -1,53 +1,53 @@
-# 基本操作
+# **基本操作**
 
-## 	设计表结构
+## 	**设计表结构**
 
-### 		班级表结构
+### 		**班级表结构**
 
-#### 			表名：
+#### 			**表名：**
 
-##### 					grade
+##### 					**grade**
 
-#### 			字段:
+#### 			**字段:**
 
-##### 					班级名称  gname
+##### 					**班级名称  gname**
 
-##### 					成立时间  gdate
+##### 					**成立时间  gdate**
 
-##### 					女生总数  ggirlnum
+##### 					**女生总数  ggirlnum**
 
-##### 					男生总数  gboy num
+##### 					**男生总数  gboy num**
 
-##### 					是否删除  isdelete
+##### 					**是否删除  isdelete**
 
-### 		学生表结构
+### 		**学生表结构**
 
-#### 			表名:students
+#### 			**表名:students**
 
-#### 			字段
+#### 			**字段**
 
-​					学生姓名
+​					**学生姓名**
 
-​					学生性别
+​					**学生性别**
 
-​					学生年龄
+​					**学生年龄**
 
-## 	配置数据库
+## 	**配置数据库**
 
 ### 		**注意：Django 默认使用的是 SQLite 数据**
 
-​			在 setting.py 文件中，通过 DATABASES 选项进行数据库配置
+​			**在 setting.py 文件中，通过 DATABASES 选项进行数据库配置**
 
-​			1：在 init,py 中写入 
+​			**1：在 init,py 中写入** 
 
 ```python
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
 
-​			2:	在 setting.py 中把 ENGINE 中的sqllite换成mysql
+​			**2:	在 setting.py 中把 ENGINE 中的sqllite换成mysql**
 
-​					name中放入配置好的数据库名
+​					**name中放入配置好的数据库名**
 
 ```python
 DATABASES = {
@@ -62,35 +62,35 @@ DATABASES = {
 }
 ```
 
-## 	创建应用
+## 	**创建应用**
 
-​		在一个项目中，可以创建多个应用，每个应用惊醒一种业务处理。
+​		**在一个项目中，可以创建多个应用，每个应用惊醒一种业务处理。**
 
-​		打开command，进入我们的项目下的project, **执行<python manage.py startapp myapp>**
+​		**打开command，进入我们的项目下的project, 执行<python manage.py startapp myapp>**
 
 ```
 C:\Users\Administrator\Desktop\Django_Project_test\project
 ```
 
-#### 		目录说明
+#### 		**目录说明**
 
-​			admin.py : 站点配置
+​			**admin.py : 站点配置**
 
-​			models.py  模型
+​			**models.py  模型**
 
-​			view.py       视图
+​			**view.py       视图**
 
-## 	激活应用
+## 	**激活应用**
 
-### 在 setting.py 中将 myapp 应用加入到INSTALLED_APPS中
+### **在 setting.py 中将 myapp 应用加入到INSTALLED_APPS中**
 
-## 定义模型
+## **定义模型**
 
-一个数据表就对应一个模型
+**一个数据表就对应一个模型**
 
-在 models.py 中定义模型
+**在 models.py 中定义模型**
 
-在 myapp 中 model.py中
+**在 myapp 中 model.py中**
 
 ```python
 from django.db import models
@@ -104,7 +104,7 @@ class Grades(models.Model):
     gboynum = models.IntegerField()
     isDelete = models.BooleanField(default=False)
 #学生
-class Student(models.Model):
+class Students(models.Model):
     sname = models.CharField(max_length=20)
     sgender = models.BooleanField(default=True)
     sage = models.IntegerField()
@@ -114,26 +114,26 @@ class Student(models.Model):
     sgrade = models.ForeignKey('Grade',on_delete=models.CASCADE)
 ```
 
-创建相应模型类
+**创建相应模型类**
 
 **说明**
 
-1：不需要定义主键，声称是会自动添加，并且值为自动自动增加的
+**1：不需要定义主键，声称是会自动添加，并且值为自动自动增加的**
 
-## 生成数据表
+## **生成数据表**
 
-在数据库中生成 数据表
+**在数据库中生成 数据表**
 
-1：生成迁移文件
+**1：生成迁移文件**
 
-在project中执行 manger.py 
+**在project中执行 manger.py** 
 
 ```
 python manager.py makemigrationss
 #在 migrations 目录下生成一个迁移文件，此时数据库中还没有身材高恒数据表
 ```
 
-2：执行迁移
+**2：执行迁移**
 
 ```
 python manage.py migrate
@@ -210,25 +210,25 @@ Running migrations:
 C:\Users\Administrator\Desktop\Django_Project_test\NewProject>
 ```
 
-## 	测试数据操作
+## 	**测试数据操作**
 
-执行
+**执行**
 
 ```
-python manage,py shell
+python manage.py shell
 from myapp.models imporet  Grade,Students
 from django.utils import timezone
 from datetime import *
 ```
 
-查询所有数据
+**查询所有数据**
 
 ```
 类名.object.all()
-Grade.object.all()
+Grade.objects.all()
 ```
 
-添加数据
+**添加数据**
 
 ```python
 grade1 = Graades（）
@@ -240,22 +240,77 @@ grade1.save()#模型和数据库交互《这不之后数据库才发生改变》
 Grades.object.all()
 ```
 
-查看某个对象
+**查看某个对象**
 
 ``` python
 Grades.object,get(pk=2)#pk主键
 ```
 
-修改某个值
+**修改某个值**
 
 ```python
 grade2.gboynum = 10086
 grade2.save()
 ```
 
-删除某个值
+**删除某个值**
+
+```python
+grade2.delete（）#物理删除，数据库表中的数据也被删除了
+```
+
+**![1559441192399](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1559441192399.png)**
+
+**关联对象**
+
+```python
+stu = Students()
+stu.sname = '陈琪'
+stu.sgender = False
+stu.sage = 20
+stu.scontend = '我叫陈小q'
+stu.sgrade = grade1#外键
+stu.save()
+```
+
+**获取关联外键对象**
+
+```python
+grade1_set.all()
+```
+
+**创建python001班级买的一个新学生**
+
+```python
+stu3 = grade1.students_set.create(sname = u'曾志伟',sgender =True,...)
+```
+
+**这里不用save  会直接保存到数据表**
+
+## 启动服务器
+
+#### 格式
 
 ```
-grade2.delete（）#物理删除，数据库表中的数据也被删除了
+python manage.py runserver ip:port#ip可以不写，默认是本机ip端口号默认是8000
+python manage,py runserver
+```
+
+#### 说明
+
+这是个纯python写的轻量级web服务器，仅仅在开发测试中使用个
+
+## Admin站点管理
+
+#### 内容发布
+
+#### 公告访问
+
+#### 配置admin应用 在setting.py中配置《默认会配置》
+
+#### 创建管理员id
+
+```
+python manage.py createsuperuser 
 ```
 
