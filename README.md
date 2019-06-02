@@ -221,3 +221,41 @@ from django.utils import timezone
 from datetime import *
 ```
 
+查询所有数据
+
+```
+类名.object.all()
+Grade.object.all()
+```
+
+添加数据
+
+```python
+grade1 = Graades（）
+grade1.gname = 'Python001'
+grade1.gdate = datetime(year=2019,month=7,day=17)
+grade1.ggirlnum = 4
+grade1.gboynum = 34
+grade1.save()#模型和数据库交互《这不之后数据库才发生改变》
+Grades.object.all()
+```
+
+查看某个对象
+
+``` python
+Grades.object,get(pk=2)#pk主键
+```
+
+修改某个值
+
+```python
+grade2.gboynum = 10086
+grade2.save()
+```
+
+删除某个值
+
+```
+grade2.delete（）#物理删除，数据库表中的数据也被删除了
+```
+
