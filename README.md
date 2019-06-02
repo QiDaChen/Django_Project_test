@@ -306,7 +306,16 @@ python manage,py runserver
 
 #### 公告访问
 
-#### 配置admin应用 在setting.py中配置《默认会配置》
+#### 配置admin应用 在setting.py中配置《默认会配置
+
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+```
+
+
+
+****
 
 #### 创建管理员id
 
