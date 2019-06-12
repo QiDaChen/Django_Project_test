@@ -549,4 +549,39 @@ TEMPLATES = [
 
 
 
-#### 2：
+#### 2：需求
+
+```
+https://127.0.0.1:8000/grades
+```
+
+1：写 grades.html 模板
+
+```html
+#在templates里创建相应的html文件  需要的数据
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生 信息表</title>
+</head>
+<body>
+    <h1>学生信息详情表</h1>
+    <ul>
+        {%for student in students%}
+        <li>
+            {{student.sname}}
+        </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
+```
+
+2:分发url
+
+```
+    url(r'^students$',views.students)
+```
+
+3：在views里面取数据传递给模块

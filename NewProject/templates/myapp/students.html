@@ -6,5 +6,12 @@
 </head>
 <body>
     <h1>学生信息详情表</h1>
+    <ul>
+        {%for student in students%}
+        <li>
+            {{student.sname}}
+        </li>
+        {%endfor%}
+    </ul>
 </body>
 </html>

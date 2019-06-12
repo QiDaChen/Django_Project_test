@@ -8,4 +8,5 @@ urlpatterns = [
     # 括号中的数字作为参数传给 detail 函数
 
     url(r'^grades/$',views.grades),
+    url(r'^students$',views.students)
 ]
