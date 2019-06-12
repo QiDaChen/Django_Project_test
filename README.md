@@ -306,7 +306,7 @@ python manage,py runserver
 
 #### 公告访问
 
-#### 配置admin应用 在setting.py中配置《默认会配置
+#### 配置admin应用 在setting.py中配置《默认会配置》
 
 ```
 INSTALLED_APPS = [
@@ -445,6 +445,7 @@ class StudentsAdmin(admin.ModelAdmin):
             return '否'
     list_display = ['pk','sname','sage','scontend',isdeleteinfo,'sgrade_id']
     isdeleteinfo.short_description = '是否删除'
+    #设置页面的列的名称
 ```
 
 ##### 
@@ -452,3 +453,100 @@ class StudentsAdmin(admin.ModelAdmin):
 ##### 执行动作的位置
 
 #### 使用装饰器完成 注册
+
+```python
+@admin.register(Students)
+class StudentsAdmin(admin.ModelAdmin):
+    def isdeleteinfo (self):
+        '''数据表中的bool值显示问题'''
+        if self.isdelete:
+            return '是'
+        else:
+            return '否'
+    isdeleteinfo.short_description = '是否删除'
+    list_display = ['pk','sname','sage','scontend',isdeleteinfo,'sgrade_id']
+    list_filter = ['sname']
+    search_fields = ['sname']
+    list_per_page = 10
+    fields = ['sname','sage','scontend','isdelete','sgrade']
+    actions_on_top = False
+    #设置执行动作的位置  top or bottom
+    actions_on_bottom = True
+    #执行动作在页面中的展示位置
+# admin.site.register(Students,StudentsAdmin)
+```
+
+## 视图的基本使用
+
+### 		概述
+
+​		在Django中视图对web请求进行回应
+
+​		视图就是一个python的一个函数，在 myapp 里面的 views.py 中定义
+
+### 		定义视图
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse('this is a web site')
+```
+
+### 		配置视图	
+
+​		1：在 project 中的 urls.py 中配置
+
+```python
+from django.contrib import admin
+from django.urls import path
+from django.conf.urls import url,include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('myapp.urls'))#匹配空的链接
+```
+
+​		2：在 myapp 应用文件中新建一个urls.py 完成 url 的配置
+
+```python
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^$',views.index)
+```
+
+## 模版的基本使用
+
+#### 模版的创建
+
+模块就是HTML页面， 可以根据视图中传递过来的数据进行填充
+
+创建 templates 目录，在目录下创建对应项目的模板目录（project/templates/myapp）
+
+配置模板路径：修改 setting.py 里面的TEMPLATES 下面的 DIRS
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')],#here 
+        'APP_DIRS': True,
+```
+
+### 定义 grades.html  和  students.html 模版
+
+#### 1：模版语法
+
+```python
+{{输出值，可以是变量，一个可以是对象属性}}
+```
+
+```
+{%执行代码块%}
+```
+
+
+
+#### 2：

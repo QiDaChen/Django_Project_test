@@ -15,9 +15,10 @@ class GradesAdmin(admin.ModelAdmin):
     # #添加修改页属性
     # fields = ['ggirlnum','gboynum','gname','gdate','isDelete']#规定属性的先后顺序
     fieldsets = [('num',{"fields":['ggirlnum','gboynum']}),
-                  ('base',{'fields':['gname','gdate','isDelete']})]#分页
+                  ('base',{'fields' : ['gname','gdate','isDelete']})]#分页
     #fields 和 fieldsets 不能同时存在
 admin.site.register(Grades,GradesAdmin)
+@admin.register(Students)
 class StudentsAdmin(admin.ModelAdmin):
     def isdeleteinfo (self):
         '''数据表中的bool值显示问题'''
@@ -32,6 +33,7 @@ class StudentsAdmin(admin.ModelAdmin):
     list_per_page = 10
     fields = ['sname','sage','scontend','isdelete','sgrade']
     actions_on_top = False
+    #设置执行动作的位置  top or bottom
     actions_on_bottom = True
     #执行动作在页面中的展示位置
-admin.site.register(Students,StudentsAdmin)
+# admin.site.register(Students,StudentsAdmin)
