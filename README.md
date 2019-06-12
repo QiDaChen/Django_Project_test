@@ -585,3 +585,16 @@ https://127.0.0.1:8000/grades
 ```
 
 3：在views里面取数据传递给模块
+
+```python
+from .models import Grades,Students
+def grades(request):
+    #去模版里面取数据
+    gradesList = Grades.objects.all()
+    #把数据给模版
+    return render(request,'myapp/grades.html',{'grades':gradesList})
+def students(request):
+    studentsList = Students.objects.all()
+    return render(request,'myapp/students.html',{'students':studentsList})
+```
+
