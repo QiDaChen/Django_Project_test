@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load staticfiles %}
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title>QiDaChen的个人博客</title>
+		<script src="{% static 'js/jquery.mousewheel.min.js' %}"></script>
+		<script src="{% static 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-2.1.0.js'%}" ></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}" ></script>
+		<link rel="stylesheet" type="text/css"href="{% static 'css/bootstrap.min.css' %}"/>
+		<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/index.css'}"/>
+		
+	</head>
+	
+
+	{% static '' %}
+	<body class="index_mian">
+		<div class="navbar navbar-inverse navbar-static-top"style="margin-bottom: 0px;">
+			<div class="container" >
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle = "collapse" data-target = "#dh">
+						<span id="a" class="icon-bar"></span>
+						<span id="a" class="icon-bar"></span>
+						<span id="a" class="icon-bar"></span>
+					</button>
+					<a href="index.html">
+					<img src="{% static 'img/qidachen_logo.png'%}" style="height: 50px; padding-right: 40px;"/>
+					</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="dh">	
+				<ul class="nav navbar-nav daohanglan">
+					<li class="active"><a href="index.html"> Index </a></li>
+					<li><a href="Forme.html"> Forme </a></li> 
+					<li><a href="tech.html"> Techlogy </a></li>
+					<li><a href="#"> Blok </a></li>
+					<li><a href="#"> Demo </a></li>
+				</ul>
+					<form action="" method="post" class="navbar-form navbar-right sososo">
+						<div class='form-group'>
+							<div class="input-group">
+								<input type="text" value="" class="form-control"/>
+								<span class="input-group-btn">
+									<button class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+								</span>
+							</div>
+						</div>	
+					</form>	
+					</div>
+				</div>
+			</div>
+			<div class="jumbotron jum-bg" style="margin-bottom: 0px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-xs-10 col-xs-offset-1">
+							<h2>The Zen of Python,</h2>
+							<article style="font-size: 16px; margin: 20px 0;">Tim Peters</article>
+							<p style="line-height: 50px;">Beautiful is better than ugly.
+								Explicit is better than implicit.
+								Simple is better than complex.
+								Complex is better than complicated.
+								Flat is better than nested.
+								Sparse is better than dense.
+								</p>
+						</div>
+						<div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 hidden-sm hidden-xs">
+							<div class="pic_title">
+								<img src="{% static 'img/未标题-1.png' %}" style="max-height: 300px;" class="img-responsive"/>
+						</div>
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="container tiao">
+				<ul class="container">
+					<li style="float: left;">
+					<h3 class="text-center jx_lt">技术栈</h3>
+					</li>
+					<li>
+					<a href="addSkill.html"><h4 class="text-right addjs_rt">&gt;&gt;添加技能</h4></a>
+					</li>
+				</ul>
+			</div>
+			<div class="container">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 le">
+					<div class="lever1 leve">
+						<h4 class="text-center" style="color: white;">精通应用</h4>
+					</div>
+					
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 le">
+					<div class="lever2 leve">
+						<h4 class="text-center">熟练掌握</h4>
+					</div>
+					
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 le">
+					<div class="lever3 leve">
+						<h4 class="text-center">基本了解</h4>
+					</div>
+					
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 le">
+					<div class="lever4 leve">
+					<h4 class="text-center">略知一二</h4>	
+					</div>
+					
+				</div >
+				<br>
+				<div class="message">
+				<h5 class="text-center" style="color: rgb(228, 77, 38);">上方图标背景颜色映射本人对技术栈掌握程度</h5>
+				</div>
+
+				
+			</div>
+			<div class="container pic-ji">
+				<div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			          <div class="lever1" style="height: 150px;">
+			          <img src="img/HTML5.png" class="img-responsive center-block"/>
+			          <h2 class="text-center">Html5</h2>
+			          </div>
+			        <div class="text-center">
+			          	<strong >超文本传输文档</strong>
+			        </div>  
+			        </div>
+			        
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3">
+			        <div class="thumbnail" style="height: 260px;">
+			          <div class="lever1" style="height: 150px;">
+			          <img src="img/css3.png" class="img-responsive center-block"/>
+			          <h2 class="text-center">Css3</h2>
+			          </div>
+			        <div class="text-center">
+			          	<strong >层叠样式表</strong>
+			        </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			        <div class="lever1" style="height: 150px;">
+			          <img src="img/language-javascript.png" class="img-responsive center-block"/>
+			        <h2 class="text-center">Javascript</h2> 
+			          	
+			        </div>
+					<div class="text-center">
+		          	<strong >直译式脚本语言</strong>
+			        </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			        <div class="lever2" style="height: 150px;">
+			          <img src="img/jquery.png" class="img-responsive center-block"/>
+			        <h2 class="text-center">Jquery</h2> 
+			        </div>
+			        <div class="text-center">
+		          	<strong >快速、简洁的JavaScript框架</strong>
+			        </div>
+			        </div>
+			    </div>
+			    
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			          <div class="lever3" style="height: 150px;">
+			          <img src="img/Bootstrap.png" class="img-responsive center-block"/>
+			          <h2 class="text-center">Bootstrap</h2>
+			          	
+			          </div>
+			          <div class="text-center">
+		          	<strong >简洁、直观、强悍的前端开发框架</strong>
+			        </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			          <div class="lever4" style="height: 150px;">
+			          <img src="img/vuejs.png" class="img-responsive center-block"/>
+			          <h2 class="text-center">vue.js</h2>
+			      	
+			          </div>
+			          <div class="text-center">
+		          	<strong >构建用户界面的渐进式框架</strong>
+			        </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			        <div class="lever4" style="height: 150px;">
+			          <img src="img/react.png" class="img-responsive center-block"/>
+			        <h2 class="text-center">react</h2> 
+			          	
+			        </div>
+			        <div class="text-center">
+		          	<strong >层叠样式表</strong>
+			        </div>
+
+			        </div>
+			    </div>
+			    <div class="col-sm-6 col-md-4 col-lg-3 ">
+			        <div class="thumbnail" style="height: 260px;">
+			        <div class="lever4" style="height: 150px;">
+			        <img src="img/angular.png" class="img-responsive center-block"/>
+			        <h2 class="text-center">angular.js</h2> 
+			        </div>
+			        <div class="text-center">
+		          	<strong>层叠样式表</strong>
+			        </div>
+
+			        </div>
+			    </div>
+     		<p></div></p>
+     		<div class="modal-footer">
+     			<div class="container">
+     				<h4 class="text-center jx_lt">How To Find Me</h4>
+     				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+     					<img src='img/微信.png' class="img-wid center-block"/>
+     					<p class="text-center jx_lt">chenphoun</p>
+     				</div>	
+     				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+     					<img src='img/微博.png' class="img-wid center-block"/>
+     					<p class="text-center jx_lt">艺术家的猫</p>
+     				</div>
+     				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+     					<img src='img/邮箱.png' class="img-wid center-block"/>
+     					<p class="text-center jx_lt">chenphoun@outlook.com</p>
+     				</div>
+     			</div>
+     		</div>
+	</body>
+</html>
